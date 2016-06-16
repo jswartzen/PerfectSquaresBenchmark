@@ -3,8 +3,14 @@
 // </copyright>
 namespace PerfectSquaresBenchmarking
 {
-    class BinarySearchSolution : IPerfectSquareSolution
+    /// <summary>
+    /// Perfect square solution using a binary search to find the square root.
+    /// </summary>
+    public class BinarySearchSolution : IPerfectSquareSolution
     {
+        /// <summary>
+        /// Gets name of this solution
+        /// </summary>
         public string Name { get { return "Binary Search"; } }
 
         /// <summary>
@@ -14,6 +20,11 @@ namespace PerfectSquaresBenchmarking
         /// <returns>true if perfect square</returns>
         public bool IsPerfectSquare(long value)
         {
+            if (value == 1)
+            {
+                return true;
+            }
+
             long high = value;
             long low = 0;
             while (high > low)

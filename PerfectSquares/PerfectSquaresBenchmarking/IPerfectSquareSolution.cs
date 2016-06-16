@@ -4,7 +4,7 @@
 
 namespace PerfectSquaresBenchmarking
 {
-    interface IPerfectSquareSolution
+    public interface IPerfectSquareSolution
     {
         /// <summary>
         /// Gets the name associated with this solver.

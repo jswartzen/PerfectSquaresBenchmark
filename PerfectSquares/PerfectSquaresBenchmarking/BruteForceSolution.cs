@@ -4,13 +4,25 @@
 
 namespace PerfectSquaresBenchmarking
 {
-    class BruteForceSolution : IPerfectSquareSolution
+    /// <summary>
+    /// Perfect square solution using a brute force approach
+    /// </summary>
+    public class BruteForceSolution : IPerfectSquareSolution
     {
+        /// <summary>
+        /// Gets the name of this solution
+        /// </summary>
         public string Name { get { return "Brute Force"; } }
 
+        /// <summary>
+        /// Finds if the input number is a perfect square using a semi-optimized
+        /// brute force approach
+        /// </summary>
+        /// <param name="value">Number being checked</param>
+        /// <returns>True if the input is a perfect square</returns>
         public bool IsPerfectSquare(long value)
         {
-            for (long i = 1; i < value; ++i)
+            for (long i = 1; i <= value; ++i)
             {
                 var squared = i * i;
                 if (squared == value)

@@ -15,6 +15,12 @@ namespace PerfectSquaresBenchmarking
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            var solutions = new IPerfectSquareSolution[]
+            {
+                new BruteForceSolution(),
+                new BinarySearchSolution(),
+                new OddNumberSumSolution()
+            };
         }
 
         /// <summary>

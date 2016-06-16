@@ -18,7 +18,8 @@ namespace PerfectSquaresTesting
             {
                 new BruteForceSolution(),
                 new BinarySearchSolution(),
-                new OddNumberSumSolution()
+                new OddNumberSumSolution(),
+                new PrimeFactorsSolution()
             };
 
             foreach (var solution in solutions)

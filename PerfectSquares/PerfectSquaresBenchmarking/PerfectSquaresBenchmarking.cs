@@ -23,7 +23,7 @@ namespace PerfectSquaresBenchmarking
             long limit;
             ProcessCommandLine(args, out onlySquares, out onlyNonSquares, out limit);
 
-            const int loops = 100000;
+            const int loops = 500000;
             var solutions = new SolutionTimer[]
             {
                 new SolutionTimer(new BruteForceSolution(), loops),
@@ -54,7 +54,7 @@ namespace PerfectSquaresBenchmarking
             else
             {
                 var binarySolver = new BinarySearchSolution();
-                for (var value = 1L; value <= limit; value = (long)(value * 1.15 + 1))
+                for (var value = 1L; value <= limit; value = (long)(value * 1.08 + 1))
                 {
                     if (!onlyNonSquares || !binarySolver.IsPerfectSquare(value)) {
                         Console.Write(value);

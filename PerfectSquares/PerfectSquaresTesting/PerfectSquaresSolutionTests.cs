@@ -28,8 +28,8 @@ namespace PerfectSquaresTesting
                 Assert.IsNotNull(solution.Name, "Name property has a value");
                 Assert.IsFalse(string.IsNullOrWhiteSpace(solution.Name), $"Solution name ({solution.Name}) is non-empty");
 
-                var perfectSquares = new long[] { 1, 4, 9, 100, 625, (long)int.MaxValue * 2 + 2 };
-                var nonSquares = new long[] { 0, 2, 3, 5, 8, 99, 101, 65535, int.MaxValue };
+                var perfectSquares = new long[] { 1, 4, 9, 100, 625, 17L * 17 * 41 * 41 * 67 * 67, (long)int.MaxValue * 2 + 2 };
+                var nonSquares = new long[] { 0, 2, 3, 5, 8, 99, 101, 65535, 17L * 17 * 41 * 41 * 67 * 67 * 11, int.MaxValue };
 
                 foreach (var square in perfectSquares)
                 {

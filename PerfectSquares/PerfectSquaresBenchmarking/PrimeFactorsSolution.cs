@@ -19,8 +19,18 @@ namespace PerfectSquaresBenchmarking
         /// <returns>True if it is a perfect square</returns>
         public bool IsPerfectSquare(long value)
         {
-            // We could optimize by processing 2s separately, then we would only need to check odd factors
-            for (int factor = 2; factor <= value; ++factor)
+            if (value == 0)
+            {
+                return false;
+            }
+
+            // Optimize by processing 2s first, then we only need to process odd numbers
+            while (value % 4 == 0)
+            {
+                value /= 4;
+            }
+
+            for (int factor = 3; value / factor >= factor; factor += 2)
             {
                 while (value % factor == 0)
                 {
@@ -28,18 +38,9 @@ namespace PerfectSquaresBenchmarking
                     if (value % factor != 0)
                     {
                         return false;
-                    } else if (value == factor)
-                    {
-                        return true;
                     }
 
                     value /= factor;
-                }
-
-                // Stop checking when we pass the largest possible prime factor
-                if (value / factor < factor)
-                {
-                    return false;
                 }
             }
 

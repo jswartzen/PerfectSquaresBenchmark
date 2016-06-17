@@ -46,8 +46,9 @@
     <Compile Include="IPerfectSquareSolution.cs" />
     <Compile Include="OddNumberSumSolution.cs" />
     <Compile Include="PrimeFactorsSolution.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="PerfectSquaresBenchmarking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SolutionTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

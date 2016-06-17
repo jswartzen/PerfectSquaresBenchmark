@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// <copyright file="PerfectSquaresBenchmarking.cs" company="OSIsoft, LLC">
+// Copyright © 2016 John L. Swartzentruber
+// </copyright>
 namespace PerfectSquaresBenchmarking
 {
+    using System;
+
     /// <summary>
     /// Helper class that times how long it takes to determine if a number is a perfect square
     /// </summary>
     public class SolutionTimer
     {
-        public IPerfectSquareSolution Solver { get; private set; }
+        public IPerfectSquareSolution Solver { get; }
 
-        private int loopCount;
+        private readonly int loopCount;
 
         /// <summary>
         /// Creates an object used to time a solution

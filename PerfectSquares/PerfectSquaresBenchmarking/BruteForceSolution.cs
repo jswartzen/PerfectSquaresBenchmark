@@ -12,7 +12,7 @@ namespace PerfectSquaresBenchmarking
         /// <summary>
         /// Gets the name of this solution
         /// </summary>
-        public string Name { get { return "Brute Force"; } }
+        public string Name => "Brute Force";
 
         /// <summary>
         /// Finds if the input number is a perfect square using a semi-optimized

@@ -11,7 +11,7 @@ namespace PerfectSquaresBenchmarking
         /// <summary>
         /// Gets name of this solution
         /// </summary>
-        public string Name { get { return "Binary Search"; } }
+        public string Name => "Binary Search";
 
         /// <summary>
         /// Binary search approach

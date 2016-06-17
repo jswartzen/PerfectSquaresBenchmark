@@ -23,13 +23,13 @@ namespace PerfectSquaresBenchmarking
             long limit;
             ProcessCommandLine(args, out onlySquares, out onlyNonSquares, out limit);
 
-            const int loops = 500000;
-            var solutions = new SolutionTimer[]
+            const int Loops = 500000;
+            var solutions = new[]
             {
-                new SolutionTimer(new BruteForceSolution(), loops),
-                new SolutionTimer(new OddNumberSumSolution(), loops),
-                new SolutionTimer(new BinarySearchSolution(), loops),
-                new SolutionTimer(new PrimeFactorsSolution(), loops)
+                new SolutionTimer(new BruteForceSolution(), Loops),
+                new SolutionTimer(new OddNumberSumSolution(), Loops),
+                new SolutionTimer(new BinarySearchSolution(), Loops),
+                new SolutionTimer(new PrimeFactorsSolution(), Loops)
             };
 
             Console.WriteLine("Value," + string.Join(",", solutions.Select(p => p.Solver.Name)));

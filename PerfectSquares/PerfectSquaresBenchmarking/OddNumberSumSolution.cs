@@ -13,7 +13,7 @@ namespace PerfectSquaresBenchmarking
         /// <summary>
         /// Gets the name of this solution
         /// </summary>
-        public string Name { get { return "Odd Number Sum";  } }
+        public string Name => "Odd Number Sum";
 
         /// <summary>
         /// Determine if the input value is a perfect square

@@ -9,7 +9,7 @@ namespace PerfectSquaresBenchmarking
     /// </summary>
     public class PrimeFactorsSolution : IPerfectSquareSolution
     {
-        public string Name { get { return "Prime Factors"; } }
+        public string Name => "Prime Factors";
 
         /// <summary>
         /// Determins if a number is a perfect square by factoring it. If a factor

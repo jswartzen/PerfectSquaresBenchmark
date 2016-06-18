@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BinarySearchSolution.cs" />
     <Compile Include="BruteForceSolution.cs" />
+    <Compile Include="HybridSolution.cs" />
     <Compile Include="IPerfectSquareSolution.cs" />
     <Compile Include="OddNumberSumSolution.cs" />
     <Compile Include="PrimeFactorsSolution.cs" />

@@ -30,6 +30,11 @@ namespace PerfectSquaresBenchmarking
                 value /= 4;
             }
 
+            if (value % 2 == 0)
+            {
+                return false;   // Odd number of 2 factors
+            }
+
             for (int factor = 3; value / factor >= factor; factor += 2)
             {
                 while (value % factor == 0)

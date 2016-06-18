@@ -3,6 +3,8 @@
 // </copyright>
 namespace PerfectSquaresTesting
 {
+    using System.Collections.Specialized;
+
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using PerfectSquaresBenchmarking;
 
@@ -19,7 +21,8 @@ namespace PerfectSquaresTesting
                 new BruteForceSolution(),
                 new BinarySearchSolution(),
                 new OddNumberSumSolution(),
-                new PrimeFactorsSolution()
+                new PrimeFactorsSolution(),
+                new HybridSolution()
             };
 
             foreach (var solution in solutions)

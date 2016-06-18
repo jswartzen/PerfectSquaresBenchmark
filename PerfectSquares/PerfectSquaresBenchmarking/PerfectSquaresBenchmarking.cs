@@ -23,13 +23,14 @@ namespace PerfectSquaresBenchmarking
             long limit;
             ProcessCommandLine(args, out onlySquares, out onlyNonSquares, out limit);
 
-            const int Loops = 500000;
+            const int Loops = 125000;
             var solutions = new[]
             {
-                new SolutionTimer(new BruteForceSolution(), Loops),
-                new SolutionTimer(new OddNumberSumSolution(), Loops),
+                // new SolutionTimer(new BruteForceSolution(), Loops),
+                // new SolutionTimer(new OddNumberSumSolution(), Loops),
                 new SolutionTimer(new BinarySearchSolution(), Loops),
-                new SolutionTimer(new PrimeFactorsSolution(), Loops)
+                new SolutionTimer(new HybridSolution(), Loops),
+                // new SolutionTimer(new PrimeFactorsSolution(), Loops)
             };
 
             Console.WriteLine("Value," + string.Join(",", solutions.Select(p => p.Solver.Name)));
@@ -53,8 +54,17 @@ namespace PerfectSquaresBenchmarking
             }
             else
             {
+                const int ArraySize = 300;
+                var random = new Random();
+                var values = new long[ArraySize];
+                for (int i = 0; i < ArraySize; ++i)
+                {
+                    values[i] = (long) Math.Round(random.NextDouble() * limit);
+                }
+                Array.Sort(values);
+
                 var binarySolver = new BinarySearchSolution();
-                for (var value = 1L; value <= limit; value = (long)(value * 1.08 + 1))
+                foreach(var value in values)
                 {
                     if (!onlyNonSquares || !binarySolver.IsPerfectSquare(value)) {
                         Console.Write(value);
@@ -82,7 +92,7 @@ namespace PerfectSquaresBenchmarking
         {
             onlySquares = false;
             onlyNonSquares = false;
-            limit = 10000;
+            limit = 300000;
 
             foreach (var arg in args)
             {
